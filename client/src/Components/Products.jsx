@@ -7,6 +7,13 @@ import { disappearSidebar, switchToNavbar } from '../actions';
 export default function Products() {
   const { search } = useLocation();
   const type = new URLSearchParams(search).get('type');
+  React.useEffect(()=>{
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  },[])
   const dispatch = useDispatch();
   return (
     <div className='products' onClick={()=>{dispatch(disappearSidebar()); dispatch(switchToNavbar())}}>
