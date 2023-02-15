@@ -13,13 +13,15 @@ function App() {
   console.log('app.js',state)
   return (
     <>
-      {state.Navbar ? <Navbar /> : <Searchbar /> }
       <BrowserRouter>
+        {state.Navbar ? <Navbar /> : <Searchbar />}
         <Routes> 
           <Route path="/" element={<><Boxes /></>} />
           <Route path="/signup" element={<><Signup /></>} />
           <Route path="/login" element={<><Login /></>} />
           <Route path="/collection" element={<><Products /></>} />
+          <Route path="/signup" element={<><Signup /></>} />
+          <Route path="/login" element={<><Login /></>} />
         </Routes>
       </BrowserRouter>
     </>

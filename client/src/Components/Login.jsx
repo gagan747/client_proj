@@ -57,14 +57,16 @@ export default function Login() {
       <h1>
         Login
       </h1>
-<input type='email' placeholder='Username...' />
-<input type='password' placeholder='Password...' />
-    <button type='submit'>Login</button>
-    <div>
-      <Link to='/signup'>Sign Up?</Link>
+      <input type='email' placeholder='Username...' required />
+      <span className='eye-container'><input type={showPassword?'text':'password'} name='password' placeholder='Password' required />
+        <i class="fa fa-eye" aria-hidden="true" onClick={()=>setShowPassword(!showPassword)}></i>
+      </span>
+      <button type='submit'>Login</button>
+      <div>
+        <Link to='/signup'>Sign Up?</Link>
         <Link to='/forgotpassword'>Forgot Password?</Link>
-    </div>
-     
+      </div>
+
 
     </form>
   )

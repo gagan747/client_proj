@@ -27,7 +27,7 @@ export default function Navbar() {
 	return (
 		<>
 			{state.sidebar && <Sidebar />}
-			<div className={'navbar ' + (window.location.pathname === '/' ? 'navbar-theme1' : 'navbar-theme2')}>
+			{window.location.pathname.match(/^\/(login|signup)$/) ? <></> : <div className={'navbar' + (window.location.pathname === '/' ? ' navbar-theme1' : ' navbar-theme2')}>
 				<div className='div1'>
 					<i onClick={() => {
 						dispatch(appearSidebar())
@@ -49,6 +49,7 @@ export default function Navbar() {
 					}}><i className='fa fa-search'></i></span>
 				</div>
 			</div>
+			}
 		</>
 	)
 }
